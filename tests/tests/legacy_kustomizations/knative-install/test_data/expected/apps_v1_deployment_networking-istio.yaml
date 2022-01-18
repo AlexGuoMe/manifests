@@ -40,7 +40,7 @@ spec:
           value: config-observability
         - name: METRICS_DOMAIN
           value: knative.dev/net-istio
-        image: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/net-istio/cmd/controller@sha256:75c7918ca887622e7242ec1965f87036db1dc462464810b72735a8e64111f6f7
+        image: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/net-istio/cmd/controller:75c7918ca887622
         name: networking-istio
         ports:
         - containerPort: 9090

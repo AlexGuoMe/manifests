@@ -42,7 +42,7 @@ spec:
           value: knative.dev/net-istio
         - name: WEBHOOK_NAME
           value: istio-webhook
-        image: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/net-istio/cmd/webhook@sha256:e6b142c0f82e0e0b8cb670c11eb4eef6ded827f98761bbf4bea7bdb777b80092
+        image: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/net-istio/cmd/webhook:6749b4c87ac8
         name: webhook
         ports:
         - containerPort: 9090

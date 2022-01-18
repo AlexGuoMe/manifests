@@ -38,7 +38,7 @@ spec:
           value: config-observability
         - name: METRICS_DOMAIN
           value: knative.dev/internal/serving
-        image: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/controller@sha256:b86ac8ecc6b2688a0e0b9cb68298220a752125d0a048b8edf2cf42403224393c
+        image: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/controller:9f8e41e19efb
         name: controller
         ports:
         - containerPort: 9090
