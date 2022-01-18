@@ -220,7 +220,7 @@ spec:
           value: config-observability
         - name: METRICS_DOMAIN
           value: knative.dev/serving
-        image: 'uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/webhook@sha256:7e6df0fda229a13219bbc90ff72a10434a0c64cd7fe13dc534b914247d1087f4'
+        image: 'uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/webhook:7e6df0fda229'
         name: webhook
         ports:
         - containerPort: 9090
