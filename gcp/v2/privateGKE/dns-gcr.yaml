@@ -1,0 +1,41 @@
+apiVersion: dns.cnrm.cloud.google.com/v1beta1
+kind: DNSManagedZone
+metadata:
+  name: name-gcr # {"$kpt-set":"name-gcr"}
+spec:
+  description: "private zone for uhub.service.ucloud.cn/a4x-kubeflow"
+  dnsName: "uhub.service.ucloud.cn/a4x-kubeflow."
+  visibility: private
+  privateVisibilityConfig:
+    networks:
+    - networkRef:
+        name: name # {"$kpt-set":"name"}
+---
+apiVersion: dns.cnrm.cloud.google.com/v1beta1
+kind: DNSRecordSet
+metadata:
+  name: name-gcr-cname # {"$kpt-set":"name-gcr-cname"}
+spec:
+  name: "*.uhub.service.ucloud.cn/a4x-kubeflow."
+  type: "CNAME"
+  ttl: 300
+  managedZoneRef:
+    name: name-gcr # {"$kpt-set":"name-gcr"}
+  rrdatas:
+  - "uhub.service.ucloud.cn/a4x-kubeflow."
+---
+apiVersion: dns.cnrm.cloud.google.com/v1beta1
+kind: DNSRecordSet
+metadata:
+  name: name-gcr-a # {"$kpt-set":"name-gcr-a"}
+spec:
+  name: "uhub.service.ucloud.cn/a4x-kubeflow."
+  type: "A"
+  ttl: 300
+  managedZoneRef:
+    name: name-gcr # {"$kpt-set":"name-gcr"}
+  rrdatas:
+  - "199.36.153.4"
+  - "199.36.153.5"
+  - "199.36.153.6"
+  - "199.36.153.7"

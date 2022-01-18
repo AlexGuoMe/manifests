@@ -1,0 +1,62 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: katib-config
+data:
+  metrics-collector-sidecar: |-
+    {
+      "StdOut": {
+        "image": "uhub.service.ucloud.cn/a4x-kubeflow/kubeflowkatib/file-metrics-collector:v1beta1-a96ff59"
+      },
+      "File": {
+        "image": "uhub.service.ucloud.cn/a4x-kubeflow/kubeflowkatib/file-metrics-collector:v1beta1-a96ff59"
+      },
+      "TensorFlowEvent": {
+        "image": "uhub.service.ucloud.cn/a4x-kubeflow/kubeflowkatib/tfevent-metrics-collector:v1beta1-a96ff59",
+        "resources": {
+          "limits": {
+            "memory": "1Gi"
+          }
+        }
+      }
+    }
+  suggestion: |-
+    {
+      "random": {
+        "image": "uhub.service.ucloud.cn/a4x-kubeflow/kubeflowkatib/suggestion-hyperopt:v1beta1-a96ff59"
+      },
+      "grid": {
+        "image": "uhub.service.ucloud.cn/a4x-kubeflow/kubeflowkatib/suggestion-chocolate:v1beta1-a96ff59"
+      },
+      "hyperband": {
+        "image": "uhub.service.ucloud.cn/a4x-kubeflow/kubeflowkatib/suggestion-hyperband:v1beta1-a96ff59"
+      },
+      "bayesianoptimization": {
+        "image": "uhub.service.ucloud.cn/a4x-kubeflow/kubeflowkatib/suggestion-skopt:v1beta1-a96ff59"
+      },
+      "tpe": {
+        "image": "uhub.service.ucloud.cn/a4x-kubeflow/kubeflowkatib/suggestion-hyperopt:v1beta1-a96ff59"
+      },
+      "enas": {
+        "image": "uhub.service.ucloud.cn/a4x-kubeflow/kubeflowkatib/suggestion-enas:v1beta1-a96ff59",
+        "imagePullPolicy": "Always",
+        "resources": {
+          "limits": {
+            "memory": "200Mi"
+          }
+        }
+      },
+      "cmaes": {
+        "image": "uhub.service.ucloud.cn/a4x-kubeflow/kubeflowkatib/suggestion-goptuna:v1beta1-a96ff59"
+      },
+      "darts": {
+        "image": "uhub.service.ucloud.cn/a4x-kubeflow/kubeflowkatib/suggestion-darts:v1beta1-a96ff59"
+      }
+    }
+  early-stopping: |-
+    {
+      "medianstop": {
+        "image": "uhub.service.ucloud.cn/a4x-kubeflow/kubeflowkatib/earlystopping-medianstop:v1beta1-a96ff59",
+        "imagePullPolicy": "Always"
+      }
+    }

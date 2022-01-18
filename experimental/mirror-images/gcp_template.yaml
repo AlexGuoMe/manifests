@@ -1,0 +1,36 @@
+# TODO(jlewi): Should we move this into the GCP directory?
+apiVersion: replication.utils.kubeflow.org/v1alpha1
+kind: Replication
+spec:
+  patterns:
+  - src:
+      include: uhub.service.ucloud.cn/a4x-kubeflow/kubeflow-images-public
+    # change to the gcr registry as image replication destination
+    dest: uhub.service.ucloud.cn/a4x-kubeflow/gcp-private-dev/mirror   # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"gcp-private-dev"}]}}
+  - src:
+      include: uhub.service.ucloud.cn/a4x-kubeflow/jetstack
+    # change to the gcr registry as image replication destination
+    dest: uhub.service.ucloud.cn/a4x-kubeflow/gcp-private-dev/mirror   # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"gcp-private-dev"}]}}    
+  - src:
+      include: uhub.service.ucloud.cn/a4x-kubeflow/ml-pipeline
+    # change to the gcr registry as image replication destination
+    dest: uhub.service.ucloud.cn/a4x-kubeflow/gcp-private-dev/mirror   # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"gcp-private-dev"}]}}          
+  - src:
+      include: argoproj
+    # change to the gcr registry as image replication destination
+    dest: uhub.service.ucloud.cn/a4x-kubeflow/gcp-private-dev/mirror   # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"gcp-private-dev"}]}}
+  - src:
+      include: minio
+    # change to the gcr registry as image replication destination
+    dest: uhub.service.ucloud.cn/a4x-kubeflow/gcp-private-dev/mirror   # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"gcp-private-dev"}]}}          
+  # Use the existing public context
+  - src:
+      include: mysql
+    # change to the gcr registry as image replication destination
+    dest: uhub.service.ucloud.cn/a4x-kubeflow/gcp-private-dev/mirror   # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"gcp-private-dev"}]}}          
+    # Use the existing public context
+  - src:
+      include: metacontroller
+    # change to the gcr registry as image replication destination
+    dest: uhub.service.ucloud.cn/a4x-kubeflow/gcp-private-dev/mirror   # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"gcp-private-dev"}]}}          
+  context: gs://kubeflow-examples/image-replicate/replicate-context.tar.gz

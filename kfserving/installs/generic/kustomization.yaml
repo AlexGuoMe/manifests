@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: kubeflow
+resources:
+- ../../upstream/kfserving.yaml
+- cluster-role.yaml
+- application.yaml
+commonLabels:
+  app: kfserving
+  kustomize.component: kfserving
+  app.kubernetes.io/component: kfserving
+  app.kubernetes.io/name: kfserving
+generatorOptions:
+ disableNameSuffixHash: true
+patchesStrategicMerge:
+- configmap-patch.yaml
+- statefulset-patch.yaml
+images:
+- name: uhub.service.ucloud.cn/a4x-kubeflow/kubebuilder/kube-rbac-proxy
+  newName: uhub.service.ucloud.cn/a4x-kubeflow/kubebuilder/kube-rbac-proxy
+  newTag: v0.4.0
+- name: uhub.service.ucloud.cn/a4x-kubeflow/kfserving/kfserving-controller
+  newName: uhub.service.ucloud.cn/a4x-kubeflow/kfserving/kfserving-controller
+  newTag: v0.4.1

@@ -1,0 +1,17 @@
+# Define a transform to change all the image prefixes to use images from a different registry
+apiVersion: v1alpha1 # Define a transform to change all the image prefixes to use images from a different registry
+kind: ImagePrefix
+metadata:
+  name: use-mirror-images-gcr
+  annotations:
+    config.kubernetes.io/function: |
+      container:
+        image: uhub.service.ucloud.cn/a4x-kubeflow/kubeflow-images-public/kpt-fns:v1.0-rc.3-58-g616f986-dirty
+spec:
+  imageMappings:
+  - src: uhub.service.ucloud.cn/a4x-kubeflow/jetstack
+    dest: uhub.service.ucloud.cn/a4x-kubeflow/customerProject/mirror/uhub.service.ucloud.cn/a4x-kubeflow/jetstack # {"$kpt-set":"image-mirror-quay-io-jetstack"}
+  - src: uhub.service.ucloud.cn/a4x-kubeflow/kubeflow-images-public
+    dest: uhub.service.ucloud.cn/a4x-kubeflow/customerProject/mirror/uhub.service.ucloud.cn/a4x-kubeflow/kubeflow-images-public # {"$kpt-set":"image-mirror-kubeflow-images-public"}
+  - src: metacontroller
+    dest: uhub.service.ucloud.cn/a4x-kubeflow/customerProject/mirror/metacontroller # {"$kpt-set":"image-mirror-metacontroller"}

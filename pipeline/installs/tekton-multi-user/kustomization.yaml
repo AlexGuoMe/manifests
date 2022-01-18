@@ -1,0 +1,42 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: kubeflow
+commonLabels:
+  app.kubernetes.io/name: kubeflow-pipelines
+  app.kubernetes.io/component: ml-pipeline
+resources:
+- ../multi-user
+- ../tekton/kfp-tekton/kfp-pipeline-config.yaml
+patchesStrategicMerge:
+- metadata-writer-clusterrole.yaml
+- ml-pipeline-apiserver-clusterrole.yaml
+- ml-pipeline-persistenceagent-clusterrole.yaml
+- ml-pipeline-ui-clusterrole.yaml
+- scheduled-workflow-clusterrole.yaml
+- ../tekton/kfp-tekton/ml-pipeline-deployment-patch.yaml
+- ../tekton/kfp-tekton/metadata-writer-deployment-patch.yaml
+configMapGenerator:
+- name: kubeflow-pipelines-profile-controller-code
+  behavior: replace
+  files:
+  - sync.py
+images:
+  - name: mysql
+    newTag: "5.6"
+  - name: minio/minio
+    newTag: RELEASE.2018-02-09T22-40-05Z
+  - name: uhub.service.ucloud.cn/a4x-kubeflow/ml-pipeline/api-server
+    newName: uhub.service.ucloud.cn/a4x-kubeflow/aipipeline/api-server
+    newTag: 0.4.0
+  - name: uhub.service.ucloud.cn/a4x-kubeflow/ml-pipeline/persistenceagent
+    newName: uhub.service.ucloud.cn/a4x-kubeflow/aipipeline/persistenceagent
+    newTag: 0.4.0
+  - name: uhub.service.ucloud.cn/a4x-kubeflow/ml-pipeline/frontend
+    newName: uhub.service.ucloud.cn/a4x-kubeflow/aipipeline/frontend
+    newTag: 0.4.0
+  - name: uhub.service.ucloud.cn/a4x-kubeflow/ml-pipeline/metadata-writer
+    newName: uhub.service.ucloud.cn/a4x-kubeflow/aipipeline/metadata-writer
+    newTag: 0.4.0
+  - name: uhub.service.ucloud.cn/a4x-kubeflow/ml-pipeline/scheduledworkflow
+    newName: uhub.service.ucloud.cn/a4x-kubeflow/aipipeline/scheduledworkflow
+    newTag: 0.4.0

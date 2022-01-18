@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- ../../base
+patchesStrategicMerge:
+- stateful-set.yaml
+images:
+- name: uhub.service.ucloud.cn/a4x-kubeflow/$(project)/application-controller
+  newName: uhub.service.ucloud.cn/a4x-kubeflow/$(project)/application-controller
+  newTag: latest
