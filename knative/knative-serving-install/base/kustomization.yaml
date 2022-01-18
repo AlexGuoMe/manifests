@@ -20,19 +20,20 @@ commonLabels:
 images:
 - name: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/activator
   newName: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/activator
-  digest: sha256:ffa3d72ee6c2eeb2357999248191a643405288061b7080381f22875cb703e929
+  digest: sha256:508699860330ac5aa2bf813c25a026ac645c1f4e08efbf159e055a4bc65d9853 
 - name: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/autoscaler
   newName: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/autoscaler
-  digest: sha256:f89fd23889c3e0ca3d8e42c9b189dc2f93aa5b3a91c64e8aab75e952a210eeb3
+  digest: sha256:f0c285d86989fb849dbcfd1613e95e671abcb46b6c27c2cd8c874e427575c133
 - name: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/webhook
   newName: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/webhook
   digest: sha256:2a917579473492e43975d3e0b57386ea9eb1c19d339e7a5a58094718f484f120
 - name: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/controller
   newName: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/controller
-  digest: sha256:b86ac8ecc6b2688a0e0b9cb68298220a752125d0a048b8edf2cf42403224393c
+  digest: sha256:7b9627c71ccb50b889f17f80460086d0a922e8afe096e7968dd1d2d88ae96418
 - name: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/net-istio/cmd/controller
   newName: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/net-istio/cmd/controller
-  digest: sha256:75c7918ca887622e7242ec1965f87036db1dc462464810b72735a8e64111f6f7
+  digest: sha256:3be3a3c67388828f226417a67911d3d6c42bf9397fe9dfd184bb4afaea49cb00
 - name: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/net-istio/cmd/webhook
   newName: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/net-istio/cmd/webhook
-  digest: sha256:e6b142c0f82e0e0b8cb670c11eb4eef6ded827f98761bbf4bea7bdb777b80092
+  digest: sha256:eb1b2611c65df1528c4c76e74ecee43c2a4ab0d6bafa18a4dd0418fe8f5eafb1
+
