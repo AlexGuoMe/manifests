@@ -26,7 +26,7 @@ images:
   digest: sha256:f89fd23889c3e0ca3d8e42c9b189dc2f93aa5b3a91c64e8aab75e952a210eeb3
 - name: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/webhook
   newName: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/webhook
-  digest: sha256:7e6df0fda229a13219bbc90ff72a10434a0c64cd7fe13dc534b914247d1087f4
+  digest: sha256:2a917579473492e43975d3e0b57386ea9eb1c19d339e7a5a58094718f484f120
 - name: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/controller
   newName: uhub.service.ucloud.cn/a4x-kubeflow/knative-releases/knative.dev/serving/cmd/controller
   digest: sha256:b86ac8ecc6b2688a0e0b9cb68298220a752125d0a048b8edf2cf42403224393c
