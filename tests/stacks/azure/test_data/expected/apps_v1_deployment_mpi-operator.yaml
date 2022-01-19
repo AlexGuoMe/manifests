@@ -32,7 +32,7 @@ spec:
         - kubeflow
         - --kubectl-delivery-image
         - mpioperator/kubectl-delivery:latest
-        image: mpioperator/mpi-operator:latest
+        image: uhub.service.ucloud.cn/a4x-kubeflow/mpioperator/mpi-operator:latest
         imagePullPolicy: Always
         name: mpi-operator
       serviceAccountName: mpi-operator
