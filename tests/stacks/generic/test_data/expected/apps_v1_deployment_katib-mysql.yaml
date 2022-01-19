@@ -43,7 +43,7 @@ spec:
           value: "true"
         - name: MYSQL_DATABASE
           value: katib
-        image: mysql:8
+        image: uhub.service.ucloud.cn/a4x-kubeflow/mysql:8
         livenessProbe:
           exec:
             command:
