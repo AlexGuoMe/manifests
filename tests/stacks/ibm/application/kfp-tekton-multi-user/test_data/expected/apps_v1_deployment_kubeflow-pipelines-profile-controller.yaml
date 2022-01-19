@@ -46,7 +46,7 @@ spec:
         envFrom:
         - configMapRef:
             name: kubeflow-pipelines-profile-controller-env-mgh6th2gff
-        image: python:3.7
+        image: uhub.service.ucloud.cn/a4x-kubeflow/python:3.7
         name: profile-controller
         ports:
         - containerPort: 80
