@@ -50,7 +50,7 @@ spec:
             name: metadata-db-parameters
         - secretRef:
             name: metadata-db-secrets
-        image: mysql:8.0.3
+        image: uhub.service.ucloud.cn/a4x-kubeflow/mysql:8.0.3
         name: db-container
         ports:
         - containerPort: 3306
