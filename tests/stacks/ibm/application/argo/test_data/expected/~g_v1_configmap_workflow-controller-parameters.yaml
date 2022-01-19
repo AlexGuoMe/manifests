@@ -10,7 +10,7 @@ data:
   artifactRepositorySecretKeySecretName: mlpipeline-minio-artifact
   clusterDomain: cluster.local
   containerRuntimeExecutor: pns
-  executorImage: argoproj/argoexec:v2.3.0
+  executorimage: uhub.service.ucloud.cn/a4x-kubeflow/argoexec:v2.3.0
   namespace: ""
 kind: ConfigMap
 metadata:

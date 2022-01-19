@@ -2,7 +2,7 @@ apiVersion: v1
 data:
   config: |
     {
-    executorImage: argoproj/argoexec:v2.3.0,
+    executorimage: uhub.service.ucloud.cn/a4x-kubeflow/argoexec:v2.3.0,
     containerRuntimeExecutor: k8sapi,
     artifactRepository:
     {
