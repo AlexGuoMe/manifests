@@ -11,5 +11,5 @@ commonLabels:
   kustomize.component: mxnet-operator
 images:
 - name: mxjob/mxnet-operator
-  newName: kubeflow/mxnet-operator
+  newName: uhub.service.ucloud.cn/a4x-kubeflow/mxnet-operator
   newTag: v1.0.0-20200625
