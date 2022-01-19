@@ -36,7 +36,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
-        image: kubeflow/mxnet-operator:v1.0.0-20200625
+        image: uhub.service.ucloud.cn/a4x-kubeflow/mxnet-operator:v1.0.0-20200625
         imagePullPolicy: Always
         name: mxnet-operator
       serviceAccountName: mxnet-operator
