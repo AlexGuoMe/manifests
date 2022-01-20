@@ -20,7 +20,7 @@ spec:
         - --lock-namespace
         - $(lock-namespace)
         - --kubectl-delivery-image
-        - $(kubectl-delivery-image)
+        - "uhub.service.ucloud.cn/a4x-kubeflow/mpioperator/kubectl-delivery:latest"
         image: uhub.service.ucloud.cn/a4x-kubeflow/mpioperator/mpi-operator:latest
         imagePullPolicy: Always
         name: mpi-operator
