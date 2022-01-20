@@ -19,9 +19,8 @@ spec:
         - -alsologtostderr
         - --lock-namespace
         - $(lock-namespace)
-        - mpi-operator
-        # - --kubectl-delivery-image
-        # - "uhub.service.ucloud.cn/a4x-kubeflow/mpioperator/kubectl-delivery:latest"
+        - --kubectl-delivery-image
+        - "uhub.service.ucloud.cn/a4x-kubeflow/mpioperator/kubectl-delivery:latest"
         image: uhub.service.ucloud.cn/a4x-kubeflow/mpioperator/mpi-operator:latest
         imagePullPolicy: Always
         name: mpi-operator
