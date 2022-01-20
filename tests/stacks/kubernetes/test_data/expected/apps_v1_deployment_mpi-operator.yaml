@@ -31,7 +31,7 @@ spec:
         - --lock-namespace
         - kubeflow
         - --kubectl-delivery-image
-        - mpioperator/kubectl-delivery:latest
+        - uhub.service.ucloud.cn/a4x-kubeflow/mpioperator/kubectl-delivery:latest
         image: uhub.service.ucloud.cn/a4x-kubeflow/mpioperator/mpi-operator:latest
         imagePullPolicy: Always
         name: mpi-operator
